@@ -5,6 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 // Pages
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import Search from './pages/Search/Search';
 import CreatePost from './pages/CreatePost/CreatePost';
 import Dashboard from './pages/Dashboard/Dashboard';
 
@@ -46,6 +47,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/search" element={<Search />} />
               <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
               <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
               <Route path="/posts/create" element={user ? <CreatePost /> : <Navigate to="/login" />} />
