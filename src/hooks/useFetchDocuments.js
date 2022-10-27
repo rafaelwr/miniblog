@@ -32,7 +32,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         if (search) {
           q = await query(
             collectionRef,
-            where("tagsArray", "array-contains", search),
+            where("tags", "array-contains", search),
             orderBy("createdAt", "desc")
           );
         } else if (uid) {
@@ -62,7 +62,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
     }
 
     loadData();
-  }, [docCollection, documents, search, uid, cancelled]);
+  }, [docCollection, search, uid, cancelled]);
 
   console.log(documents);
 
